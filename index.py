@@ -1,12 +1,10 @@
 import base64
 from logging import exception
-from  dotenv import load_dotenv
-import os
+
 import requests
 
-load_dotenv('env')
-client_id=os.getenv('client_id')
-client_secret=os.getenv('client_secret')
+client_id='1f4b663f5eaa4295ada9bd822be1e72b'
+client_secret='eddc5e6c0b3e42019a1283694558d541'
 
 def access_token():
     try:
@@ -23,7 +21,8 @@ def access_token():
         return response.json()['access_token']
     except Exception as e:
         print("error in token ",e)
-        
+
+
 def get_new_release():
     try:
         token = access_token()
